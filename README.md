@@ -67,3 +67,39 @@ ReactDOM.render( saludo,divRoot )
 <a name="schema2"></a>
 
 # 2 Nuestro Primer Componente
+El nombre de los componentes se escriben en mayúsculas `PrimeraApp.js`
+
+Funcional components:
+- `PrimeraApp.js`
+~~~jsx
+import React from "react";
+
+const PrimeraApp = () => {
+  return <h1>Hola Mundo</h1>;
+}
+
+export default PrimeraApp
+~~~
+- `index.js`
+~~~jsx
+import React from 'react'
+import ReactDOM from 'react-dom'
+import PrimeraApp from './PrimeraApp'
+import './index.css'
+
+
+const divRoot = document.querySelector('#root')
+
+ReactDOM.render(<PrimeraApp />, divRoot)
+~~~
+- Algo de estilos en el  `index.css`, añadimos en el archivo `index.js` el import del archivo css.
+
+~~~css
+html,body{
+  color: white;
+  background-color: aquamarine;
+  font-family: "Helvetica Neue",Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  padding: 50px;
+}
+~~~
