@@ -200,3 +200,52 @@ export default PrimeraApp
 <a name="schema5"></a>
 
 # 5 Comunicación entre componentes, props
+Las props se heredan de padres a hijos.
+
+- `index.js`
+~~~js
+import React from 'react'
+import ReactDOM from 'react-dom'
+import PrimeraApp from './PrimeraApp'
+import './index.css'
+
+
+const divRoot = document.querySelector('#root')
+
+ReactDOM.render(<PrimeraApp saludo = 'Hola, soy un saludo'/>, divRoot)
+~~~
+- `PrimeraApp.js`
+~~~js
+import React from "react";
+
+const PrimeraApp = (props) => {
+  console.log(props)
+    return (
+    <>
+      <h1>{ props.saludo }</h1>
+      {/* <pre>{JSON.stringify(saludoObject, null, 3 ) }</pre> */}
+      <p>Mi primera aplicación</p>
+    </>
+  )
+}
+
+export default PrimeraApp
+~~~
+- Mejor es usar una destructuración de props en `PrimeraApp.js`
+~~~js
+const PrimeraApp = ({ saludo } ) => {
+    return (
+    <>
+      <h1>{ saludo }</h1>
+      {/* <pre>{JSON.stringify(saludoObject, null, 3 ) }</pre> */}
+      <p>Mi primera aplicación</p>
+    </>
+  )
+}
+
+export default PrimeraApp
+~~~
+- Se puede poner una valor por defecto a la variable.
+~~~js
+const PrimeraApp = ({ saludo = 'Hola mundo' }) => {
+~~~

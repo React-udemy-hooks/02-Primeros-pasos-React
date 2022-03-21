@@ -1,12 +1,9 @@
 import React from "react";
 
-const PrimeraApp = () => {
-  const saludoObjet = {
-    nombre: 'Patricia',
-    edad: 100
-  } 
-  const saludo = 'Hola Mundo'
-  return (
+const PrimeraApp = ({ saludo = 'Hola mundo' }) => {
+  
+
+    return (
     <>
       <h1>{ saludo }</h1>
       {/* <pre>{JSON.stringify(saludoObject, null, 3 ) }</pre> */}
