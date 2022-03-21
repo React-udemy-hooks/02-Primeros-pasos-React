@@ -2,12 +2,10 @@
 
 0. [¿Qué es un componente React?](#schema0)
 1. [Primera aplicación en React](#schema1)
-1. [2 Nuestro Primer Componente](schema2)
+1. [Nuestro Primer Componente](schema2)
+1. [Fragment `<></>`](#schema3)
+1. [Impresión de variables en el HTML](#schema4)
 
-
-Exposiciones sobre los componentes
-
-Creación de componentes (Functional Components)
 
 Propiedades - Props
 
@@ -103,3 +101,59 @@ html,body{
   padding: 50px;
 }
 ~~~
+<hr>
+
+<a name="schema3"></a>
+
+# 3 Fragment `<></>`
+- Con div
+~~~js
+import React from "react";
+
+const PrimeraApp = () => {
+  return (
+    <div>
+      <h1>Hola Mundo</h1>
+      <p>Mi primera aplicación</p>
+    </div>
+  )
+}
+
+export default PrimeraApp
+~~~
+- Con Fragment
+~~~js
+import React, { Fragment } from "react";
+
+const PrimeraApp = () => {
+  return (
+    <Fragment>
+      <h1>Hola Mundo</h1>
+      <p>Mi primera aplicación</p>
+    </Fragment>
+  )
+}
+
+export default PrimeraApp
+~~~
+- Mejor opción, fragment si importar el Fragment
+~~~js
+import React from "react";
+
+const PrimeraApp = () => {
+  return (
+    <>
+      <h1>Hola Mundo</h1>
+      <p>Mi primera aplicación</p>
+    </>
+  )
+}
+
+export default PrimeraApp
+~~~
+
+<hr>
+
+<a name="schema4"></a>
+
+# 4 Impresión de variables en el HTML
