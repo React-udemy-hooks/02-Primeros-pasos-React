@@ -5,9 +5,8 @@
 1. [Nuestro Primer Componente](schema2)
 1. [Fragment `<></>`](#schema3)
 1. [Impresión de variables en el HTML](#schema4)
+1. [Comunicación entre componentes, props](#schema5)
 
-
-Propiedades - Props
 
 Impresiones en el HTML
 
@@ -157,3 +156,47 @@ export default PrimeraApp
 <a name="schema4"></a>
 
 # 4 Impresión de variables en el HTML
+Vale para strings, números, arrays, pero para objectos no
+~~~js
+import React from "react";
+
+const PrimeraApp = () => {
+  const saludo = 'Hola mundo const'
+  return (
+    <>
+      <h1>{ saludo }</h1>
+      <p>Mi primera aplicación</p>
+    </>
+  )
+}
+
+export default PrimeraApp
+~~~
+- Para objectos:
+~~~js
+import React from "react";
+
+const PrimeraApp = () => {
+  const saludoObjet = {
+    nombre: 'Patricia',
+    edad: 100
+  } 
+  const saludo = 'Hola Mundo'
+  return (
+    <>
+      <h1>{ saludo }</h1>
+      <pre>{JSON.stringify(saludoObject, null, 3 ) }</pre>
+      <p>Mi primera aplicación</p>
+    </>
+  )
+}
+
+export default PrimeraApp
+~~~
+
+
+<hr>
+
+<a name="schema5"></a>
+
+# 5 Comunicación entre componentes, props
