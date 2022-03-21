@@ -279,3 +279,10 @@ export default PrimeraApp
 <a name="schema7"></a>
 
 # 7 DefaultProps
+- Valores por defecto, en `PrimeraApp.js`
+~~~js
+PrimeraApp.defaultProps = {
+  subtitulo: 'soy un subtítulo'
+}
+
+~~~
