@@ -6,13 +6,9 @@
 1. [Fragment `<></>`](#schema3)
 1. [Impresión de variables en el HTML](#schema4)
 1. [Comunicación entre componentes, props](#schema5)
+1. [PropsTypes](#schema6)
+1. [DefaultProps](#schema7)
 
-
-Impresiones en el HTML
-
-PropTypes
-
-DefaultProps
 
 Introducción general a los Hooks
 
@@ -249,3 +245,37 @@ export default PrimeraApp
 ~~~js
 const PrimeraApp = ({ saludo = 'Hola mundo' }) => {
 ~~~
+
+<hr>
+
+<a name="schema6"></a>
+
+# 6 PropsTypes
+Cuando un componente necesita una prop de padres debemos pasar un valor, hay que obligar a que nos pasen ese valor por las `PropsTypes`
+- `PrimeraApp.js`
+~~~js
+import React from "react";
+import PropTypes from 'prop-types'
+
+const PrimeraApp = ({ saludo }) => {
+  
+
+    return (
+    <>
+      <h1>{ saludo }</h1>
+      {/* <pre>{JSON.stringify(saludoObject, null, 3 ) }</pre> */}
+      <p>Mi primera aplicación</p>
+    </>
+  )
+}
+PrimeraApp.propTypes = {
+  saludo: PropTypes.string.isRequired
+}
+
+export default PrimeraApp
+~~~
+<hr>
+
+<a name="schema7"></a>
+
+# 7 DefaultProps
