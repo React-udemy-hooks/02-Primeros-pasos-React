@@ -10,7 +10,7 @@
 1. [DefaultProps](#schema7)
 1. [Evento click (Eventos en general)](#schema8)
 1. [useState](#schema9)
-
+1. [handleSubtract y handleReset](#schema10)
 
 <hr>
 
@@ -386,4 +386,32 @@ const CounterApp = ({ value }) => {
   }
 ~~~
 
+<hr>
+
+<a name="schema10"></a>
+
 # 10 handleSubtract y handleReset
+
+~~~js
+const CounterApp = ({ value }) => {
+  
+  const [ counter, setCounter ] = useState( value );
+
+  const handleAdd = (e) => {
+    // setCounter(counter + 1)
+    setCounter((c)=> c + 1)
+  }
+  const handleSub = () => {
+    setCounter((c) => c - 1);
+  }
+  return (
+    <>
+      <h1>CounterApp</h1>
+      <h2> {counter} </h2>
+      <button onClick={handleAdd}> +1</button>
+      <button onClick={ ()=>setCounter(value) }> Reset</button>
+      <button onClick={handleSub}> -1</button>
+    </>
+  );
+};
+~~~
