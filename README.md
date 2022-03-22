@@ -8,12 +8,8 @@
 1. [Comunicación entre componentes, props](#schema5)
 1. [PropsTypes](#schema6)
 1. [DefaultProps](#schema7)
-
-
-Introducción general a los Hooks
-
-useState
-
+1. [Evento click (Eventos en general)](#schema8)
+1. [useState](#schema9)
 
 
 <hr>
@@ -286,3 +282,78 @@ PrimeraApp.defaultProps = {
 }
 
 ~~~
+<hr>
+
+<a name="schema8"></a>
+
+# 8  Evento click (Eventos en general)
+
+doc: https://es.reactjs.org/docs/events.html
+- Ejemplo de Evento: `onClick` en `CounterApp.js`
+~~~js
+const CounterApp = ({ value }) => {
+  return (
+    <>
+      <h1>CounterApp</h1>
+      <h2> {value} </h2>
+      <button onClick={ (e)=>{console.log(e)} } > +1</button>
+    </>
+  );
+};
+~~~
+- Creando una función para el onClick,
+~~~js
+const CounterApp = ({ value }) => {
+  
+  const handleAdd = (e) => {
+    console.log(e)
+  }
+  return (
+    <>
+      <h1>CounterApp</h1>
+      <h2> {value} </h2>
+      <button onClick={(e)=> handleAdd(e) } > +1</button>
+    </>
+  );
+};
+~~~
+Como en la arrow function el primer argumento es enviado como primer argumento de la función que está dentro, por consecuencia podemos cambiar y dejarlo así
+~~~js
+const CounterApp = ({ value }) => {
+  
+  const handleAdd = (e) => {
+    console.log(e)
+  }
+  return (
+    <>
+      <h1>CounterApp</h1>
+      <h2> {value} </h2>
+      <button onClick={ handleAdd } > +1</button>
+    </>
+  );
+};
+~~~
+- Si queremos poner unos paréntesis en la función `handleAdd` en dicha función debe tener una función de retorno
+~~~js
+const CounterApp = ({ value }) => {
+  
+  const handleAdd = (e) => {
+    return ()=>{console.log('Hola')}
+  }
+  return (
+    <>
+      <h1>CounterApp</h1>
+      <h2> {value} </h2>
+      <button onClick={ handleAdd() } > +1</button>
+    </>
+  );
+};
+~~~
+
+Se puede hacer de las dos maneras. Con y sin paréntesis.
+
+<hr>
+
+<a name="schema9"></a>
+
+# 9 useState

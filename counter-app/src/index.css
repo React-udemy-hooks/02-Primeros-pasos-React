@@ -3,5 +3,12 @@ html,body{
   background-color: aquamarine;
   font-family: "Helvetica Neue",Arial, Helvetica, sans-serif;
   font-size: 1.3rem;
-  padding: 50px;
+  padding: 5px;
+}
+
+button{
+  font-size: 1.3rem;
+  margin-right: 10px;
+  padding: 10px;
+  
 }
